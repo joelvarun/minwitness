@@ -1,0 +1,1839 @@
+{
+  "generated": "2026-09-28",
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "validate_rate": 0.3,
+  "wall_seconds": 280.6,
+  "subjects": [
+    {
+      "name": "colorsys",
+      "module": "colorsys",
+      "probe": "M.rgb_to_hsv(0.2, 0.4, 0.4)",
+      "kind": "value",
+      "units": 104,
+      "source_lines": 167,
+      "reference": "V(0.5, 0.5, 0.4)",
+      "methods": {
+        "ddmin": {
+          "calls": 106,
+          "reduce_calls": 93,
+          "certify_calls": 13,
+          "determined": 0,
+          "witness_units": 13,
+          "bound": 13,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.1,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 64,
+          "reduce_calls": 51,
+          "certify_calls": 13,
+          "determined": 236,
+          "witness_units": 13,
+          "bound": 13,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.06,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 88,
+          "reduce_calls": 75,
+          "certify_calls": 13,
+          "determined": 0,
+          "witness_units": 13,
+          "bound": 13,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.07,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 57,
+          "reduce_calls": 44,
+          "certify_calls": 13,
+          "determined": 74,
+          "witness_units": 13,
+          "bound": 13,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.05,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 60,
+          "reduce_calls": 47,
+          "certify_calls": 13,
+          "determined": 0,
+          "witness_units": 13,
+          "bound": 13,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.08,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 57,
+          "reduce_calls": 44,
+          "certify_calls": 13,
+          "determined": 2057,
+          "witness_units": 13,
+          "bound": 13,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.06,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "def rgb_to_hsv(r, g, b):\n    maxc = max(r, g, b)\n    minc = min(r, g, b)\n    rangec = maxc - minc\n    v = maxc\n    s = rangec / maxc\n    rc = (maxc - r) / rangec\n    bc = (maxc - b) / rangec\n    if r == maxc:\n        pass\n    elif g == maxc:\n        h = 2.0 + rc - bc\n    h = h / 6.0 % 1.0\n    return (h, s, v)",
+      "audit": {
+        "self_refuting": false,
+        "bound": 13,
+        "witness_units": 13,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": []
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 62,
+        "violations": 0,
+        "calls": 81
+      },
+      "monotone_probe": {
+        "witness_units": 13,
+        "breakers": 0,
+        "calls": 15,
+        "examples": []
+      }
+    },
+    {
+      "name": "fnmatch",
+      "module": "fnmatch",
+      "probe": "M.fnmatch('report.txt', '*.txt')",
+      "kind": "value",
+      "units": 123,
+      "source_lines": 193,
+      "reference": "VTrue",
+      "methods": {
+        "ddmin": {
+          "calls": 455,
+          "reduce_calls": 419,
+          "certify_calls": 36,
+          "determined": 0,
+          "witness_units": 36,
+          "bound": 37,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 1.83,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 182,
+          "reduce_calls": 150,
+          "certify_calls": 32,
+          "determined": 887,
+          "witness_units": 36,
+          "bound": 38,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.86,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 396,
+          "reduce_calls": 353,
+          "certify_calls": 43,
+          "determined": 0,
+          "witness_units": 37,
+          "bound": 36,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 6,
+          "improved": 0,
+          "seconds": 1.94,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 220,
+          "reduce_calls": 179,
+          "certify_calls": 41,
+          "determined": 389,
+          "witness_units": 37,
+          "bound": 36,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 6,
+          "improved": 0,
+          "seconds": 1.05,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 185,
+          "reduce_calls": 148,
+          "certify_calls": 37,
+          "determined": 0,
+          "witness_units": 36,
+          "bound": 36,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 1,
+          "improved": 0,
+          "seconds": 0.85,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 187,
+          "reduce_calls": 151,
+          "certify_calls": 36,
+          "determined": 2419,
+          "witness_units": 36,
+          "bound": 36,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 1,
+          "improved": 0,
+          "seconds": 0.97,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "import re\nimport functools\n\ndef fnmatch(name, pat):\n    return fnmatchcase(name, pat)\n\n@functools.lru_cache(maxsize=32768, typed=True)\ndef _compile_pattern(pat):\n    if isinstance(pat, bytes):\n        pass\n    else:\n        res = translate(pat)\n    return re.compile(res).match\n\ndef fnmatchcase(name, pat):\n    match = _compile_pattern(pat)\n    return match(name) is not None\n\ndef translate(pat):\n    STAR = object()\n    parts = _translate(pat, STAR, '.')\n    return _join_translated_parts(parts, STAR)\n\ndef _translate(pat, STAR, QUESTION_MARK):\n    res = []\n    add = res.append\n    i, n = (0, len(pat))\n    while i < n:\n        c = pat[i]\n        i = i + 1\n        if c == '*':\n            if not res or res[-1] is not STAR:\n                add(STAR)\n    return res\n\ndef _join_translated_parts(inp, STAR):\n    res = []\n    add = res.append\n    i, n = (0, len(inp))\n    while i < n:\n        i += 1\n        if i == n:\n            add('.*')\n    res = ''.join(res)\n    return f'(?s:{res})\\\\Z'",
+      "audit": {
+        "self_refuting": true,
+        "bound": 38,
+        "witness_units": 36,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": [
+          {
+            "superset_units": 57,
+            "witness_units": 36,
+            "extra_units": 21
+          },
+          {
+            "superset_units": 76,
+            "witness_units": 36,
+            "extra_units": 40
+          }
+        ]
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 324,
+        "violations": 16,
+        "calls": 247
+      },
+      "monotone_probe": {
+        "witness_units": 36,
+        "breakers": 4,
+        "calls": 24,
+        "examples": [
+          "name = os.path.normcase(name)",
+          "pat = os.path.normcase(pat)",
+          "assert inp[i] is not STAR"
+        ]
+      }
+    },
+    {
+      "name": "string",
+      "module": "string",
+      "probe": "M.Template('$a-$b').substitute(a='x', b='y')",
+      "kind": "value",
+      "units": 152,
+      "source_lines": 310,
+      "reference": "V'x-y'",
+      "methods": {
+        "ddmin": {
+          "calls": 284,
+          "reduce_calls": 259,
+          "certify_calls": 25,
+          "determined": 0,
+          "witness_units": 25,
+          "bound": 27,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.22,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 145,
+          "reduce_calls": 120,
+          "certify_calls": 25,
+          "determined": 740,
+          "witness_units": 25,
+          "bound": 27,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.15,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 207,
+          "reduce_calls": 182,
+          "certify_calls": 25,
+          "determined": 0,
+          "witness_units": 25,
+          "bound": 27,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.17,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 147,
+          "reduce_calls": 122,
+          "certify_calls": 25,
+          "determined": 282,
+          "witness_units": 25,
+          "bound": 27,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.15,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 134,
+          "reduce_calls": 109,
+          "certify_calls": 25,
+          "determined": 0,
+          "witness_units": 25,
+          "bound": 26,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.2,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 126,
+          "reduce_calls": 103,
+          "certify_calls": 23,
+          "determined": 3008,
+          "witness_units": 25,
+          "bound": 26,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.18,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "import re as _re\n_sentinel_dict = {}\n\nclass Template:\n    delimiter = '$'\n    idpattern = '(?a:[_a-z][_a-z0-9]*)'\n    braceidpattern = None\n    flags = _re.IGNORECASE\n\n    def __init_subclass__(cls):\n        if 'pattern' in cls.__dict__:\n            pass\n        else:\n            delim = _re.escape(cls.delimiter)\n            id = cls.idpattern\n            bid = cls.braceidpattern or cls.idpattern\n            pattern = f'\\n            {delim}(?:\\n              (?P<escaped>{delim})  |   # Escape sequence of two delimiters\\n              (?P<named>{id})       |   # delimiter and a Python identifier\\n              {{(?P<braced>{bid})}} |   # delimiter and a braced identifier\\n              (?P<invalid>)             # Other ill-formed delimiter exprs\\n            )\\n            '\n        cls.pattern = _re.compile(pattern, cls.flags | _re.VERBOSE)\n\n    def __init__(self, template):\n        self.template = template\n\n    def substitute(self, mapping=_sentinel_dict, /, **kws):\n        if mapping is _sentinel_dict:\n            mapping = kws\n\n        def convert(mo):\n            named = mo.group('named') or mo.group('braced')\n            if named is not None:\n                return str(mapping[named])\n        return self.pattern.sub(convert, self.template)\nTemplate.__init_subclass__()",
+      "audit": {
+        "self_refuting": true,
+        "bound": 27,
+        "witness_units": 25,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": [
+          {
+            "superset_units": 44,
+            "witness_units": 25,
+            "extra_units": 19
+          },
+          {
+            "superset_units": 54,
+            "witness_units": 25,
+            "extra_units": 29
+          },
+          {
+            "superset_units": 61,
+            "witness_units": 25,
+            "extra_units": 36
+          }
+        ]
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 251,
+        "violations": 16,
+        "calls": 160
+      },
+      "monotone_probe": {
+        "witness_units": 25,
+        "breakers": 3,
+        "calls": 26,
+        "examples": [
+          "ascii_letters = ascii_lowercase + ascii_uppercase",
+          "hexdigits = digits + 'abcdef' + 'ABCDEF'",
+          "printable = digits + ascii_letters + punctuation + whitespace"
+        ]
+      }
+    },
+    {
+      "name": "textwrap",
+      "module": "textwrap",
+      "probe": "M.wrap('the quick brown fox jumps', 10)",
+      "kind": "value",
+      "units": 179,
+      "source_lines": 498,
+      "reference": "V['the quick', 'brown fox', 'jumps']",
+      "methods": {
+        "ddmin": {
+          "calls": 1026,
+          "reduce_calls": 978,
+          "certify_calls": 48,
+          "determined": 0,
+          "witness_units": 48,
+          "bound": 49,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 6.71,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 294,
+          "reduce_calls": 248,
+          "certify_calls": 46,
+          "determined": 2925,
+          "witness_units": 48,
+          "bound": 49,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 2.35,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 642,
+          "reduce_calls": 594,
+          "certify_calls": 48,
+          "determined": 0,
+          "witness_units": 48,
+          "bound": 49,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 3.71,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 277,
+          "reduce_calls": 229,
+          "certify_calls": 48,
+          "determined": 911,
+          "witness_units": 48,
+          "bound": 49,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 2.16,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 318,
+          "reduce_calls": 270,
+          "certify_calls": 48,
+          "determined": 0,
+          "witness_units": 48,
+          "bound": 49,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 2.59,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 270,
+          "reduce_calls": 224,
+          "certify_calls": 46,
+          "determined": 3510,
+          "witness_units": 48,
+          "bound": 49,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 2.03,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "import re\n_whitespace = '\\t\\n\\x0b\\x0c\\r '\n\nclass TextWrapper:\n    word_punct = '[\\\\w!\"\\\\\\'&.,?]'\n    letter = '[^\\\\d\\\\W]'\n    whitespace = '[%s]' % re.escape(_whitespace)\n    nowhitespace = '[^' + whitespace[1:]\n    wordsep_re = re.compile('\\n        ( # any whitespace\\n          %(ws)s+\\n        | # em-dash between words\\n          (?<=%(wp)s) -{2,} (?=\\\\w)\\n        | # word, possibly hyphenated\\n          %(nws)s+? (?:\\n            # hyphenated word\\n              -(?: (?<=%(lt)s{2}-) | (?<=%(lt)s-%(lt)s-))\\n              (?= %(lt)s -? %(lt)s)\\n            | # end of word\\n              (?=%(ws)s|\\\\Z)\\n            | # em-dash\\n              (?<=%(wp)s) (?=-{2,}\\\\w)\\n            )\\n        )' % {'wp': word_punct, 'lt': letter, 'ws': whitespace, 'nws': nowhitespace}, re.VERBOSE)\n\n    def __init__(self, width=70, initial_indent='', subsequent_indent='', expand_tabs=True, replace_whitespace=True, fix_sentence_endings=False, break_long_words=True, drop_whitespace=True, break_on_hyphens=True, tabsize=8, *, max_lines=None, placeholder=' [...]'):\n        self.width = width\n        self.initial_indent = initial_indent\n        self.drop_whitespace = drop_whitespace\n        self.break_on_hyphens = break_on_hyphens\n        self.max_lines = max_lines\n\n    def _split(self, text):\n        if self.break_on_hyphens is True:\n            chunks = self.wordsep_re.split(text)\n        chunks = [c for c in chunks if c]\n        return chunks\n\n    def _wrap_chunks(self, chunks):\n        lines = []\n        chunks.reverse()\n        while chunks:\n            cur_line = []\n            cur_len = 0\n            if lines:\n                pass\n            else:\n                indent = self.initial_indent\n            width = self.width - len(indent)\n            while chunks:\n                l = len(chunks[-1])\n                if cur_len + l <= width:\n                    cur_line.append(chunks.pop())\n                    cur_len += l\n                else:\n                    break\n            if self.drop_whitespace and cur_line and (cur_line[-1].strip() == ''):\n                del cur_line[-1]\n            if cur_line:\n                if self.max_lines is None or len(lines) + 1 < self.max_lines or ((not chunks or (self.drop_whitespace and len(chunks) == 1 and (not chunks[0].strip()))) and cur_len <= width):\n                    lines.append(indent + ''.join(cur_line))\n        return lines\n\n    def _split_chunks(self, text):\n        return self._split(text)\n\n    def wrap(self, text):\n        chunks = self._split_chunks(text)\n        return self._wrap_chunks(chunks)\n\ndef wrap(text, width=70, **kwargs):\n    w = TextWrapper(width=width, **kwargs)\n    return w.wrap(text)",
+      "audit": {
+        "self_refuting": true,
+        "bound": 49,
+        "witness_units": 48,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": [
+          {
+            "superset_units": 71,
+            "witness_units": 48,
+            "extra_units": 23
+          },
+          {
+            "superset_units": 73,
+            "witness_units": 48,
+            "extra_units": 25
+          },
+          {
+            "superset_units": 75,
+            "witness_units": 48,
+            "extra_units": 27
+          }
+        ]
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 790,
+        "violations": 32,
+        "calls": 472
+      },
+      "monotone_probe": {
+        "witness_units": 48,
+        "breakers": 3,
+        "calls": 41,
+        "examples": [
+          "indent = self.subsequent_indent",
+          "text = self._munge_whitespace(text)",
+          "if self.fix_sentence_endings:"
+        ]
+      }
+    },
+    {
+      "name": "getopt",
+      "module": "getopt",
+      "probe": "M.getopt(['-a', '-b', 'x'], 'ab:')",
+      "kind": "value",
+      "units": 109,
+      "source_lines": 216,
+      "reference": "V([('-a', ''), ('-b', 'x')], [])",
+      "methods": {
+        "ddmin": {
+          "calls": 141,
+          "reduce_calls": 121,
+          "certify_calls": 20,
+          "determined": 0,
+          "witness_units": 20,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 1.46,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 79,
+          "reduce_calls": 59,
+          "certify_calls": 20,
+          "determined": 377,
+          "witness_units": 20,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.8,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 138,
+          "reduce_calls": 118,
+          "certify_calls": 20,
+          "determined": 0,
+          "witness_units": 20,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 2.16,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 86,
+          "reduce_calls": 66,
+          "certify_calls": 20,
+          "determined": 137,
+          "witness_units": 20,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.81,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 111,
+          "reduce_calls": 91,
+          "certify_calls": 20,
+          "determined": 0,
+          "witness_units": 20,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 1.4,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 82,
+          "reduce_calls": 63,
+          "certify_calls": 19,
+          "determined": 2158,
+          "witness_units": 20,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.93,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "def getopt(args, shortopts, longopts=[]):\n    opts = []\n    while args and args[0].startswith('-') and (args[0] != '-'):\n        if args[0].startswith('--'):\n            pass\n        else:\n            opts, args = do_shorts(opts, args[0][1:], shortopts, args[1:])\n    return (opts, args)\n\ndef do_shorts(opts, optstring, shortopts, args):\n    while optstring != '':\n        opt, optstring = (optstring[0], optstring[1:])\n        if short_has_arg(opt, shortopts):\n            if optstring == '':\n                optstring, args = (args[0], args[1:])\n            optarg, optstring = (optstring, '')\n        else:\n            optarg = ''\n        opts.append(('-' + opt, optarg))\n    return (opts, args)\n\ndef short_has_arg(opt, shortopts):\n    for i in range(len(shortopts)):\n        if opt == shortopts[i] != ':':\n            return shortopts.startswith(':', i + 1)",
+      "audit": {
+        "self_refuting": false,
+        "bound": 20,
+        "witness_units": 20,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": []
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 106,
+        "violations": 0,
+        "calls": 109
+      },
+      "monotone_probe": {
+        "witness_units": 20,
+        "breakers": 1,
+        "calls": 16,
+        "examples": [
+          "error = GetoptError # backward compatibility"
+        ]
+      }
+    },
+    {
+      "name": "shlex",
+      "module": "shlex",
+      "probe": "M.split('one \"two three\" four')",
+      "kind": "value",
+      "units": 271,
+      "source_lines": 346,
+      "reference": "V['one', 'two three', 'four']",
+      "methods": {
+        "ddmin": {
+          "calls": 2130,
+          "reduce_calls": 2061,
+          "certify_calls": 69,
+          "determined": 0,
+          "witness_units": 69,
+          "bound": 69,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 31.98,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 427,
+          "reduce_calls": 365,
+          "certify_calls": 62,
+          "determined": 7564,
+          "witness_units": 69,
+          "bound": 69,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 7.19,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 874,
+          "reduce_calls": 801,
+          "certify_calls": 73,
+          "determined": 0,
+          "witness_units": 69,
+          "bound": 69,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 4,
+          "improved": 0,
+          "seconds": 16.03,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 427,
+          "reduce_calls": 355,
+          "certify_calls": 72,
+          "determined": 1156,
+          "witness_units": 69,
+          "bound": 69,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 3,
+          "improved": 0,
+          "seconds": 8.33,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 528,
+          "reduce_calls": 459,
+          "certify_calls": 69,
+          "determined": 0,
+          "witness_units": 69,
+          "bound": 71,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 11.61,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 418,
+          "reduce_calls": 351,
+          "certify_calls": 67,
+          "determined": 5310,
+          "witness_units": 69,
+          "bound": 71,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 7.77,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "from io import StringIO\n\nclass shlex:\n\n    def __init__(self, instream=None, infile=None, posix=False, punctuation_chars=False):\n        if isinstance(instream, str):\n            instream = StringIO(instream)\n        if instream is not None:\n            self.instream = instream\n        self.posix = posix\n        if posix:\n            self.eof = None\n        self.commenters = '#'\n        self.wordchars = 'abcdfeghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_'\n        self.whitespace = ' \\t\\r\\n'\n        self.quotes = '\\'\"'\n        self.escape = '\\\\'\n        self.state = ' '\n\n    @property\n    def punctuation_chars(self):\n        pass\n\n    def get_token(self):\n        raw = self.read_token()\n        return raw\n\n    def read_token(self):\n        quoted = False\n        while True:\n            if self.punctuation_chars and self._pushback_chars:\n                pass\n            else:\n                nextchar = self.instream.read(1)\n            if self.state is None:\n                pass\n            elif self.state == ' ':\n                if not nextchar:\n                    pass\n                elif nextchar in self.whitespace:\n                    pass\n                elif nextchar in self.commenters:\n                    pass\n                elif self.posix and nextchar in self.escape:\n                    pass\n                elif nextchar in self.wordchars:\n                    self.token = nextchar\n                    self.state = 'a'\n            elif self.state in self.quotes:\n                if nextchar == self.state:\n                    if not self.posix:\n                        pass\n                    else:\n                        self.state = 'a'\n                elif self.posix and nextchar in self.escape and (self.state in self.escapedquotes):\n                    pass\n                else:\n                    self.token += nextchar\n            elif self.state in self.escape:\n                pass\n            elif self.state in ('a', 'c'):\n                if not nextchar:\n                    break\n                elif nextchar in self.whitespace:\n                    if self.token or (self.posix and quoted):\n                        break\n                elif nextchar in self.commenters:\n                    pass\n                elif self.state == 'c':\n                    pass\n                elif self.posix and nextchar in self.quotes:\n                    self.state = nextchar\n                elif self.posix and nextchar in self.escape:\n                    pass\n                elif nextchar in self.wordchars or nextchar in self.quotes or (self.whitespace_split and nextchar not in self.punctuation_chars):\n                    self.token += nextchar\n        result = self.token\n        self.token = ''\n        if self.posix and (not quoted) and (result == ''):\n            result = None\n        return result\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        token = self.get_token()\n        if token == self.eof:\n            raise StopIteration\n        return token\n\ndef split(s, comments=False, posix=True):\n    lex = shlex(s, posix=posix)\n    return list(lex)",
+      "audit": {
+        "self_refuting": false,
+        "bound": 69,
+        "witness_units": 69,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": []
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 2999,
+        "violations": 63,
+        "calls": 1112
+      },
+      "monotone_probe": {
+        "witness_units": 69,
+        "breakers": 13,
+        "calls": 84,
+        "examples": [
+          "_find_unsafe = re.compile(r'[^\\w@%+=:,./-]', re.ASCII).search",
+          "self.pushback = deque()",
+          "self.filestack = deque()"
+        ]
+      }
+    },
+    {
+      "name": "shlex-error",
+      "module": "shlex",
+      "probe": "M.split('unbalanced \"quote')",
+      "kind": "exception",
+      "units": 271,
+      "source_lines": 346,
+      "reference": "EValueError:No closing quotation",
+      "methods": {
+        "ddmin": {
+          "calls": 1472,
+          "reduce_calls": 1427,
+          "certify_calls": 45,
+          "determined": 0,
+          "witness_units": 45,
+          "bound": 47,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 25.53,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 301,
+          "reduce_calls": 262,
+          "certify_calls": 39,
+          "determined": 5170,
+          "witness_units": 45,
+          "bound": 47,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 4.99,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 757,
+          "reduce_calls": 712,
+          "certify_calls": 45,
+          "determined": 0,
+          "witness_units": 45,
+          "bound": 45,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 12.43,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 319,
+          "reduce_calls": 274,
+          "certify_calls": 45,
+          "determined": 1046,
+          "witness_units": 45,
+          "bound": 45,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 6.25,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 353,
+          "reduce_calls": 308,
+          "certify_calls": 45,
+          "determined": 0,
+          "witness_units": 45,
+          "bound": 46,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 8.37,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 292,
+          "reduce_calls": 249,
+          "certify_calls": 43,
+          "determined": 5328,
+          "witness_units": 45,
+          "bound": 46,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 5.22,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "from io import StringIO\n\nclass shlex:\n\n    def __init__(self, instream=None, infile=None, posix=False, punctuation_chars=False):\n        if isinstance(instream, str):\n            instream = StringIO(instream)\n        if instream is not None:\n            self.instream = instream\n        self.posix = posix\n        self.commenters = '#'\n        self.wordchars = 'abcdfeghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_'\n        self.whitespace = ' \\t\\r\\n'\n        self.quotes = '\\'\"'\n        self.escape = '\\\\'\n        self.state = ' '\n        if not punctuation_chars:\n            punctuation_chars = ''\n        self._punctuation_chars = punctuation_chars\n\n    @property\n    def punctuation_chars(self):\n        return self._punctuation_chars\n\n    def get_token(self):\n        raw = self.read_token()\n\n    def read_token(self):\n        while True:\n            if self.punctuation_chars and self._pushback_chars:\n                pass\n            else:\n                nextchar = self.instream.read(1)\n            if self.state is None:\n                pass\n            elif self.state == ' ':\n                if not nextchar:\n                    pass\n                elif nextchar in self.whitespace:\n                    pass\n                elif nextchar in self.commenters:\n                    pass\n                elif self.posix and nextchar in self.escape:\n                    pass\n                elif nextchar in self.wordchars:\n                    pass\n                elif nextchar in self.punctuation_chars:\n                    pass\n                elif nextchar in self.quotes:\n                    self.state = nextchar\n            elif self.state in self.quotes:\n                if not nextchar:\n                    raise ValueError('No closing quotation')\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        token = self.get_token()\n\ndef split(s, comments=False, posix=True):\n    lex = shlex(s, posix=posix)\n    return list(lex)",
+      "audit": {
+        "self_refuting": true,
+        "bound": 47,
+        "witness_units": 45,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": [
+          {
+            "superset_units": 118,
+            "witness_units": 45,
+            "extra_units": 73
+          },
+          {
+            "superset_units": 121,
+            "witness_units": 45,
+            "extra_units": 76
+          },
+          {
+            "superset_units": 122,
+            "witness_units": 45,
+            "extra_units": 77
+          }
+        ]
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 1741,
+        "violations": 51,
+        "calls": 701
+      },
+      "monotone_probe": {
+        "witness_units": 45,
+        "breakers": 9,
+        "calls": 74,
+        "examples": [
+          "_find_unsafe = re.compile(r'[^\\w@%+=:,./-]', re.ASCII).search",
+          "self.pushback = deque()",
+          "self.filestack = deque()"
+        ]
+      }
+    },
+    {
+      "name": "csv",
+      "module": "csv",
+      "probe": "M.Sniffer().sniff('a,b,c')  .delimiter",
+      "kind": "value",
+      "units": 264,
+      "source_lines": 514,
+      "reference": "V','",
+      "methods": {
+        "ddmin": {
+          "calls": 640,
+          "reduce_calls": 583,
+          "certify_calls": 57,
+          "determined": 0,
+          "witness_units": 52,
+          "bound": 49,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 5,
+          "improved": 0,
+          "seconds": 4.5,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 303,
+          "reduce_calls": 249,
+          "certify_calls": 54,
+          "determined": 2689,
+          "witness_units": 52,
+          "bound": 47,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 5,
+          "improved": 0,
+          "seconds": 4.25,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 612,
+          "reduce_calls": 558,
+          "certify_calls": 54,
+          "determined": 0,
+          "witness_units": 54,
+          "bound": 55,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 7.52,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 309,
+          "reduce_calls": 256,
+          "certify_calls": 53,
+          "determined": 751,
+          "witness_units": 54,
+          "bound": 49,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 5,
+          "improved": 0,
+          "seconds": 4.6,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 270,
+          "reduce_calls": 213,
+          "certify_calls": 57,
+          "determined": 0,
+          "witness_units": 52,
+          "bound": 47,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 5,
+          "improved": 0,
+          "seconds": 3.0,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 230,
+          "reduce_calls": 175,
+          "certify_calls": 55,
+          "determined": 5211,
+          "witness_units": 52,
+          "bound": 45,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 5,
+          "improved": 0,
+          "seconds": 2.74,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "import re\n\nclass Dialect:\n    pass\n\nclass Sniffer:\n\n    def sniff(self, sample, delimiters=None):\n        quotechar, doublequote, delimiter, skipinitialspace = self._guess_quote_and_delimiter(sample, delimiters)\n        if not delimiter:\n            delimiter, skipinitialspace = self._guess_delimiter(sample, delimiters)\n\n        class dialect(Dialect):\n            pass\n        dialect.delimiter = delimiter\n        return dialect\n\n    def _guess_quote_and_delimiter(self, data, delimiters):\n        for restr in ('(?P<delim>[^\\\\w\\\\n\"\\\\\\'])(?P<space> ?)(?P<quote>[\"\\\\\\']).*?(?P=quote)(?P=delim)', '(?:^|\\\\n)(?P<quote>[\"\\\\\\']).*?(?P=quote)(?P<delim>[^\\\\w\\\\n\"\\\\\\'])(?P<space> ?)', '(?P<delim>[^\\\\w\\\\n\"\\\\\\'])(?P<space> ?)(?P<quote>[\"\\\\\\']).*?(?P=quote)(?:$|\\\\n)', '(?:^|\\\\n)(?P<quote>[\"\\\\\\']).*?(?P=quote)(?:$|\\\\n)'):\n            regexp = re.compile(restr, re.DOTALL | re.MULTILINE)\n            matches = regexp.findall(data)\n        if not matches:\n            return ('', False, None, 0)\n\n    def _guess_delimiter(self, data, delimiters):\n        data = list(filter(None, data.split('\\n')))\n        ascii = [chr(c) for c in range(127)]\n        chunkLength = min(10, len(data))\n        iteration = 0\n        charFrequency = {}\n        modes = {}\n        delims = {}\n        start, end = (0, chunkLength)\n        while start < len(data):\n            iteration += 1\n            for line in data[start:end]:\n                for char in ascii:\n                    metaFrequency = charFrequency.get(char, {})\n                    freq = line.count(char)\n                    metaFrequency[freq] = metaFrequency.get(freq, 0) + 1\n                    charFrequency[char] = metaFrequency\n            for char in charFrequency.keys():\n                items = list(charFrequency[char].items())\n                if len(items) > 1:\n                    pass\n                else:\n                    modes[char] = items[0]\n            modeList = modes.items()\n            total = float(min(chunkLength * iteration, len(data)))\n            consistency = 1.0\n            threshold = 0.9\n            while len(delims) == 0 and consistency >= threshold:\n                for k, v in modeList:\n                    if v[0] > 0 and v[1] > 0:\n                        if v[1] / total >= consistency and (delimiters is None or k in delimiters):\n                            delims[k] = v\n            start = end\n        items = [(v, k) for k, v in delims.items()]\n        items.sort()\n        delim = items[-1][1]\n        skipinitialspace = data[0].count(delim) == data[0].count('%c ' % delim)\n        return (delim, skipinitialspace)",
+      "audit": {
+        "self_refuting": false,
+        "bound": 47,
+        "witness_units": 52,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": []
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 786,
+        "violations": 36,
+        "calls": 403
+      },
+      "monotone_probe": {
+        "witness_units": 52,
+        "breakers": 5,
+        "calls": 61,
+        "examples": [
+          "register_dialect(\"excel\", excel)",
+          "class excel_tab(excel):",
+          "register_dialect(\"excel-tab\", excel_tab)"
+        ]
+      }
+    },
+    {
+      "name": "base64",
+      "module": "base64",
+      "probe": "M.b85encode(b'abcdefgh')",
+      "kind": "value",
+      "units": 331,
+      "source_lines": 612,
+      "reference": "Vb'VPa!sWoBn+'",
+      "methods": {
+        "ddmin": {
+          "calls": 209,
+          "reduce_calls": 196,
+          "certify_calls": 13,
+          "determined": 0,
+          "witness_units": 13,
+          "bound": 15,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.29,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 91,
+          "reduce_calls": 78,
+          "certify_calls": 13,
+          "determined": 430,
+          "witness_units": 13,
+          "bound": 15,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.17,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 179,
+          "reduce_calls": 166,
+          "certify_calls": 13,
+          "determined": 0,
+          "witness_units": 13,
+          "bound": 14,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.28,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 94,
+          "reduce_calls": 81,
+          "certify_calls": 13,
+          "determined": 282,
+          "witness_units": 13,
+          "bound": 15,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.21,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 116,
+          "reduce_calls": 103,
+          "certify_calls": 13,
+          "determined": 0,
+          "witness_units": 13,
+          "bound": 16,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.37,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 106,
+          "reduce_calls": 93,
+          "certify_calls": 13,
+          "determined": 6571,
+          "witness_units": 13,
+          "bound": 16,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.33,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "import struct\n\ndef _85encode(b, chars, chars2, pad=False, foldnuls=False, foldspaces=False):\n    words = struct.Struct('!%dI' % (len(b) // 4)).unpack(b)\n    chunks = [b'z' if foldnuls and (not word) else b'y' if foldspaces and word == 538976288 else chars2[word // 614125] + chars2[word // 85 % 7225] + chars[word % 85] for word in words]\n    return b''.join(chunks)\n_b85alphabet = b'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~'\n_b85chars2 = None\n\ndef b85encode(b, pad=False):\n    global _b85chars, _b85chars2\n    if _b85chars2 is None:\n        _b85chars = [bytes((i,)) for i in _b85alphabet]\n        _b85chars2 = [a + b for a in _b85chars for b in _b85chars]\n    return _85encode(b, _b85chars, _b85chars2, pad)",
+      "audit": {
+        "self_refuting": true,
+        "bound": 15,
+        "witness_units": 13,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": [
+          {
+            "superset_units": 29,
+            "witness_units": 13,
+            "extra_units": 16
+          },
+          {
+            "superset_units": 29,
+            "witness_units": 13,
+            "extra_units": 16
+          },
+          {
+            "superset_units": 165,
+            "witness_units": 13,
+            "extra_units": 152
+          }
+        ]
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 131,
+        "violations": 7,
+        "calls": 141
+      },
+      "monotone_probe": {
+        "witness_units": 13,
+        "breakers": 10,
+        "calls": 62,
+        "examples": [
+          "b32encode.__doc__ = _B32_ENCODE_DOCSTRING.format(encoding='base32')",
+          "b32decode.__doc__ = _B32_DECODE_DOCSTRING.format(encoding='base32',",
+          "b32hexencode.__doc__ = _B32_ENCODE_DOCSTRING.format(encoding='base32hex')"
+        ]
+      }
+    },
+    {
+      "name": "copy",
+      "module": "copy",
+      "probe": "M.deepcopy({'a': [1, 2], 'b': (3, 4)})",
+      "kind": "value",
+      "units": 175,
+      "source_lines": 307,
+      "reference": "V{'a': [1, 2], 'b': (3, 4)}",
+      "methods": {
+        "ddmin": {
+          "calls": 579,
+          "reduce_calls": 549,
+          "certify_calls": 30,
+          "determined": 0,
+          "witness_units": 30,
+          "bound": 30,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.53,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 223,
+          "reduce_calls": 193,
+          "certify_calls": 30,
+          "determined": 1535,
+          "witness_units": 30,
+          "bound": 30,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.25,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 487,
+          "reduce_calls": 457,
+          "certify_calls": 30,
+          "determined": 0,
+          "witness_units": 30,
+          "bound": 32,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.48,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 207,
+          "reduce_calls": 177,
+          "certify_calls": 30,
+          "determined": 795,
+          "witness_units": 30,
+          "bound": 32,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.26,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 206,
+          "reduce_calls": 176,
+          "certify_calls": 30,
+          "determined": 0,
+          "witness_units": 30,
+          "bound": 30,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.3,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 185,
+          "reduce_calls": 155,
+          "certify_calls": 30,
+          "determined": 3445,
+          "witness_units": 30,
+          "bound": 30,
+          "bound_exact": true,
+          "certified_minimal": true,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.28,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "def deepcopy(x, memo=None, _nil=[]):\n    cls = type(x)\n    copier = _deepcopy_dispatch.get(cls)\n    if copier is not None:\n        y = copier(x, memo)\n    return y\n_deepcopy_dispatch = d = {}\n\ndef _deepcopy_atomic(x, memo):\n    return x\nd[int] = _deepcopy_atomic\nd[str] = _deepcopy_atomic\n\ndef _deepcopy_list(x, memo, deepcopy=deepcopy):\n    y = []\n    append = y.append\n    for a in x:\n        append(deepcopy(a, memo))\n    return y\nd[list] = _deepcopy_list\n\ndef _deepcopy_tuple(x, memo, deepcopy=deepcopy):\n    y = [deepcopy(a, memo) for a in x]\n    for k, j in zip(x, y):\n        pass\n    else:\n        y = x\n    return y\nd[tuple] = _deepcopy_tuple\n\ndef _deepcopy_dict(x, memo, deepcopy=deepcopy):\n    y = {}\n    for key, value in x.items():\n        y[deepcopy(key, memo)] = deepcopy(value, memo)\n    return y\nd[dict] = _deepcopy_dict",
+      "audit": {
+        "self_refuting": false,
+        "bound": 30,
+        "witness_units": 30,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": []
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 476,
+        "violations": 14,
+        "calls": 370
+      },
+      "monotone_probe": {
+        "witness_units": 30,
+        "breakers": 18,
+        "calls": 46,
+        "examples": [
+          "error = Error   # backward compatibility",
+          "for t in (types.NoneType, int, float, bool, complex, str, tuple,",
+          "d[list] = list.copy"
+        ]
+      }
+    },
+    {
+      "name": "posixpath",
+      "module": "posixpath",
+      "probe": "M.normpath('a/b/../c/./d')",
+      "kind": "value",
+      "units": 352,
+      "source_lines": 582,
+      "reference": "V'a/c/d'",
+      "methods": {
+        "ddmin": {
+          "calls": 268,
+          "reduce_calls": 240,
+          "certify_calls": 28,
+          "determined": 0,
+          "witness_units": 28,
+          "bound": 29,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.8,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 147,
+          "reduce_calls": 119,
+          "certify_calls": 28,
+          "determined": 796,
+          "witness_units": 28,
+          "bound": 29,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.51,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 245,
+          "reduce_calls": 217,
+          "certify_calls": 28,
+          "determined": 0,
+          "witness_units": 28,
+          "bound": 29,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.74,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 146,
+          "reduce_calls": 118,
+          "certify_calls": 28,
+          "determined": 225,
+          "witness_units": 28,
+          "bound": 29,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.52,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 190,
+          "reduce_calls": 162,
+          "certify_calls": 28,
+          "determined": 0,
+          "witness_units": 28,
+          "bound": 29,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.84,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 160,
+          "reduce_calls": 132,
+          "certify_calls": 28,
+          "determined": 6992,
+          "witness_units": 28,
+          "bound": 29,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.81,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "try:\n    from posix import _path_splitroot_ex as splitroot\nexcept ImportError:\n\n    def splitroot(p):\n        if isinstance(p, bytes):\n            pass\n        else:\n            sep = '/'\n            empty = ''\n        if p[:1] != sep:\n            return (empty, empty, p)\ntry:\n    from posix import _path_normpath as normpath\nexcept ImportError:\n\n    def normpath(path):\n        if isinstance(path, bytes):\n            pass\n        else:\n            sep = '/'\n            dot = '.'\n            dotdot = '..'\n        _, initial_slashes, path = splitroot(path)\n        comps = path.split(sep)\n        new_comps = []\n        for comp in comps:\n            if not comp or comp == dot:\n                continue\n            if comp != dotdot or (not initial_slashes and (not new_comps)) or (new_comps and new_comps[-1] == dotdot):\n                new_comps.append(comp)\n            elif new_comps:\n                new_comps.pop()\n        comps = new_comps\n        path = initial_slashes + sep.join(comps)\n        return path or dot",
+      "audit": {
+        "self_refuting": true,
+        "bound": 29,
+        "witness_units": 28,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": [
+          {
+            "superset_units": 34,
+            "witness_units": 28,
+            "extra_units": 6
+          },
+          {
+            "superset_units": 64,
+            "witness_units": 28,
+            "extra_units": 36
+          },
+          {
+            "superset_units": 77,
+            "witness_units": 28,
+            "extra_units": 49
+          }
+        ]
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 247,
+        "violations": 1,
+        "calls": 190
+      },
+      "monotone_probe": {
+        "witness_units": 28,
+        "breakers": 4,
+        "calls": 47,
+        "examples": [
+          "splitext.__doc__ = genericpath._splitext.__doc__",
+          "supports_unicode_filenames = (sys.platform == 'darwin')",
+          "p = os.fspath(p)"
+        ]
+      }
+    },
+    {
+      "name": "fractions",
+      "module": "fractions",
+      "probe": "repr(M.Fraction('3/6') + M.Fraction(1, 6))",
+      "kind": "value",
+      "units": 460,
+      "source_lines": 1041,
+      "reference": "V'Fraction(2, 3)'",
+      "methods": {
+        "ddmin": {
+          "calls": 1582,
+          "reduce_calls": 1516,
+          "certify_calls": 66,
+          "determined": 0,
+          "witness_units": 66,
+          "bound": 67,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 2.75,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 396,
+          "reduce_calls": 328,
+          "certify_calls": 68,
+          "determined": 4513,
+          "witness_units": 69,
+          "bound": 70,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 1.22,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 956,
+          "reduce_calls": 887,
+          "certify_calls": 69,
+          "determined": 0,
+          "witness_units": 69,
+          "bound": 70,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 2.24,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 413,
+          "reduce_calls": 344,
+          "certify_calls": 69,
+          "determined": 1478,
+          "witness_units": 69,
+          "bound": 71,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 1.16,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 431,
+          "reduce_calls": 365,
+          "certify_calls": 66,
+          "determined": 0,
+          "witness_units": 66,
+          "bound": 67,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 1.49,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 380,
+          "reduce_calls": 314,
+          "certify_calls": 66,
+          "determined": 9069,
+          "witness_units": 66,
+          "bound": 67,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 1.46,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "from decimal import Decimal\nimport math\nimport numbers\nimport operator\nimport re\n_RATIONAL_FORMAT = re.compile('\\n    \\\\A\\\\s*                                  # optional whitespace at the start,\\n    (?P<sign>[-+]?)                        # an optional sign, then\\n    (?=\\\\d|\\\\.\\\\d)                            # lookahead for digit or .digit\\n    (?P<num>\\\\d*|\\\\d+(_\\\\d+)*)                # numerator (possibly empty)\\n    (?:                                    # followed by\\n       (?:\\\\s*/\\\\s*(?P<denom>\\\\d+(_\\\\d+)*))?   # an optional denominator\\n    |                                      # or\\n       (?:\\\\.(?P<decimal>\\\\d*|\\\\d+(_\\\\d+)*))?  # an optional fractional part\\n       (?:E(?P<exp>[-+]?\\\\d+(_\\\\d+)*))?      # and optional exponent\\n    )\\n    \\\\s*\\\\Z                                  # and optional whitespace to finish\\n', re.VERBOSE | re.IGNORECASE)\n\nclass Fraction(numbers.Rational):\n\n    def __new__(cls, numerator=0, denominator=None):\n        self = super(Fraction, cls).__new__(cls)\n        if denominator is None:\n            if type(numerator) is int:\n                pass\n            elif isinstance(numerator, numbers.Rational):\n                pass\n            elif isinstance(numerator, (float, Decimal)):\n                pass\n            elif isinstance(numerator, str):\n                m = _RATIONAL_FORMAT.match(numerator)\n                numerator = int(m.group('num') or '0')\n                denom = m.group('denom')\n                if denom:\n                    denominator = int(denom)\n        g = math.gcd(numerator, denominator)\n        numerator //= g\n        denominator //= g\n        self._numerator = numerator\n        self._denominator = denominator\n        return self\n\n    @classmethod\n    def _from_coprime_ints(cls, numerator, denominator, /):\n        obj = super(Fraction, cls).__new__(cls)\n        obj._numerator = numerator\n        obj._denominator = denominator\n        return obj\n\n    @property\n    def numerator(a):\n        pass\n\n    @property\n    def denominator(a):\n        pass\n\n    def __repr__(self):\n        return '%s(%s, %s)' % (self.__class__.__name__, self._numerator, self._denominator)\n\n    def _operator_fallbacks(monomorphic_operator, fallback_operator, handle_complex=True):\n\n        def forward(a, b):\n            if isinstance(b, Fraction):\n                return monomorphic_operator(a, b)\n\n        def reverse(b, a):\n            pass\n        return (forward, reverse)\n\n    def _add(a, b):\n        na, da = (a._numerator, a._denominator)\n        nb, db = (b._numerator, b._denominator)\n        g = math.gcd(da, db)\n        s = da // g\n        t = na * (db // g) + nb * s\n        g2 = math.gcd(t, g)\n        return Fraction._from_coprime_ints(t // g2, s * (db // g2))\n    __add__, __radd__ = _operator_fallbacks(_add, operator.add)\n\n    def _mul(a, b):\n        pass\n    __mul__, __rmul__ = _operator_fallbacks(_mul, operator.mul)\n\n    def _div(a, b):\n        pass\n    __truediv__, __rtruediv__ = _operator_fallbacks(_div, operator.truediv)\n\n    def _floordiv(a, b):\n        pass\n    __floordiv__, __rfloordiv__ = _operator_fallbacks(_floordiv, operator.floordiv, False)\n\n    def _mod(a, b):\n        pass\n    __mod__, __rmod__ = _operator_fallbacks(_mod, operator.mod, False)\n\n    def __pow__(a, b):\n        pass\n\n    def __rpow__(b, a):\n        pass\n\n    def __pos__(a):\n        pass\n\n    def __neg__(a):\n        pass\n\n    def __abs__(a):\n        pass\n\n    def __trunc__(a):\n        pass\n\n    def __floor__(a):\n        pass\n\n    def __ceil__(a):\n        pass\n\n    def __round__(self, ndigits=None):\n        pass\n\n    def __eq__(a, b):\n        pass\n\n    def __lt__(a, b):\n        pass\n\n    def __le__(a, b):\n        pass",
+      "audit": {
+        "self_refuting": true,
+        "bound": 70,
+        "witness_units": 69,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": [
+          {
+            "superset_units": 104,
+            "witness_units": 69,
+            "extra_units": 35
+          }
+        ]
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 1462,
+        "violations": 26,
+        "calls": 761
+      },
+      "monotone_probe": {
+        "witness_units": 69,
+        "breakers": 5,
+        "calls": 125,
+        "examples": [
+          "_PyHASH_MODULUS = sys.hash_info.modulus",
+          "_PyHASH_INF = sys.hash_info.inf",
+          "def _hash_algorithm(numerator, denominator):"
+        ]
+      }
+    },
+    {
+      "name": "fractions-error",
+      "module": "fractions",
+      "probe": "M.Fraction('1/0')",
+      "kind": "exception",
+      "units": 460,
+      "source_lines": 1041,
+      "reference": "EZeroDivisionError:Fraction(1, 0)",
+      "methods": {
+        "ddmin": {
+          "calls": 359,
+          "reduce_calls": 341,
+          "certify_calls": 18,
+          "determined": 0,
+          "witness_units": 18,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.53,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 172,
+          "reduce_calls": 155,
+          "certify_calls": 17,
+          "determined": 2111,
+          "witness_units": 18,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.35,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 633,
+          "reduce_calls": 615,
+          "certify_calls": 18,
+          "determined": 0,
+          "witness_units": 18,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 1.56,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 246,
+          "reduce_calls": 228,
+          "certify_calls": 18,
+          "determined": 978,
+          "witness_units": 18,
+          "bound": 21,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.75,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 282,
+          "reduce_calls": 264,
+          "certify_calls": 18,
+          "determined": 0,
+          "witness_units": 18,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.87,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 230,
+          "reduce_calls": 212,
+          "certify_calls": 18,
+          "determined": 9088,
+          "witness_units": 18,
+          "bound": 20,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.87,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "from decimal import Decimal\nimport numbers\nimport re\n_RATIONAL_FORMAT = re.compile('\\n    \\\\A\\\\s*                                  # optional whitespace at the start,\\n    (?P<sign>[-+]?)                        # an optional sign, then\\n    (?=\\\\d|\\\\.\\\\d)                            # lookahead for digit or .digit\\n    (?P<num>\\\\d*|\\\\d+(_\\\\d+)*)                # numerator (possibly empty)\\n    (?:                                    # followed by\\n       (?:\\\\s*/\\\\s*(?P<denom>\\\\d+(_\\\\d+)*))?   # an optional denominator\\n    |                                      # or\\n       (?:\\\\.(?P<decimal>\\\\d*|\\\\d+(_\\\\d+)*))?  # an optional fractional part\\n       (?:E(?P<exp>[-+]?\\\\d+(_\\\\d+)*))?      # and optional exponent\\n    )\\n    \\\\s*\\\\Z                                  # and optional whitespace to finish\\n', re.VERBOSE | re.IGNORECASE)\n\nclass Fraction(numbers.Rational):\n\n    def __new__(cls, numerator=0, denominator=None):\n        if denominator is None:\n            if type(numerator) is int:\n                pass\n            elif isinstance(numerator, numbers.Rational):\n                pass\n            elif isinstance(numerator, (float, Decimal)):\n                pass\n            elif isinstance(numerator, str):\n                m = _RATIONAL_FORMAT.match(numerator)\n                numerator = int(m.group('num') or '0')\n                denom = m.group('denom')\n                if denom:\n                    denominator = int(denom)\n        if denominator == 0:\n            raise ZeroDivisionError('Fraction(%s, 0)' % numerator)",
+      "audit": {
+        "self_refuting": true,
+        "bound": 20,
+        "witness_units": 18,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": [
+          {
+            "superset_units": 31,
+            "witness_units": 18,
+            "extra_units": 13
+          },
+          {
+            "superset_units": 32,
+            "witness_units": 18,
+            "extra_units": 14
+          },
+          {
+            "superset_units": 34,
+            "witness_units": 18,
+            "extra_units": 16
+          }
+        ]
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 507,
+        "violations": 39,
+        "calls": 261
+      },
+      "monotone_probe": {
+        "witness_units": 18,
+        "breakers": 12,
+        "calls": 90,
+        "examples": [
+          "_PyHASH_MODULUS = sys.hash_info.modulus",
+          "_PyHASH_INF = sys.hash_info.inf",
+          "def _hash_algorithm(numerator, denominator):"
+        ]
+      }
+    },
+    {
+      "name": "calendar",
+      "module": "calendar",
+      "probe": "M.monthrange(2024, 2)",
+      "kind": "value",
+      "units": 476,
+      "source_lines": 814,
+      "reference": "V(m_calendar.THURSDAY, 29)",
+      "methods": {
+        "ddmin": {
+          "calls": 332,
+          "reduce_calls": 317,
+          "certify_calls": 15,
+          "determined": 0,
+          "witness_units": 15,
+          "bound": 17,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.51,
+          "timeouts": 0
+        },
+        "ddmin+store": {
+          "calls": 138,
+          "reduce_calls": 123,
+          "certify_calls": 15,
+          "determined": 1310,
+          "witness_units": 15,
+          "bound": 17,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.43,
+          "timeouts": 0
+        },
+        "hdd": {
+          "calls": 238,
+          "reduce_calls": 223,
+          "certify_calls": 15,
+          "determined": 0,
+          "witness_units": 15,
+          "bound": 16,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.44,
+          "timeouts": 0
+        },
+        "hdd+store": {
+          "calls": 105,
+          "reduce_calls": 90,
+          "certify_calls": 15,
+          "determined": 326,
+          "witness_units": 15,
+          "bound": 16,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.23,
+          "timeouts": 0
+        },
+        "probdd": {
+          "calls": 148,
+          "reduce_calls": 133,
+          "certify_calls": 15,
+          "determined": 0,
+          "witness_units": 15,
+          "bound": 17,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.57,
+          "timeouts": 0
+        },
+        "probdd+store": {
+          "calls": 123,
+          "reduce_calls": 108,
+          "certify_calls": 15,
+          "determined": 9462,
+          "witness_units": 15,
+          "bound": 17,
+          "bound_exact": true,
+          "certified_minimal": false,
+          "jumps": 0,
+          "improved": 0,
+          "seconds": 0.62,
+          "timeouts": 0
+        }
+      },
+      "witness_source": "import datetime\nfrom enum import IntEnum, global_enum\n\n@global_enum\nclass Month(IntEnum):\n    FEBRUARY = 2\n\n@global_enum\nclass Day(IntEnum):\n    THURSDAY = 3\nmdays = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]\n\ndef isleap(year):\n    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)\n\ndef weekday(year, month, day):\n    return Day(datetime.date(year, month, day).weekday())\n\ndef monthrange(year, month):\n    day1 = weekday(year, month, 1)\n    ndays = mdays[month] + (month == FEBRUARY and isleap(year))\n    return (day1, ndays)",
+      "audit": {
+        "self_refuting": true,
+        "bound": 17,
+        "witness_units": 15,
+        "validated": 0,
+        "violations": 0,
+        "counterexamples": [
+          {
+            "superset_units": 31,
+            "witness_units": 15,
+            "extra_units": 16
+          },
+          {
+            "superset_units": 34,
+            "witness_units": 15,
+            "extra_units": 19
+          },
+          {
+            "superset_units": 57,
+            "witness_units": 15,
+            "extra_units": 42
+          }
+        ]
+      },
+      "validation": {
+        "rate": 0.3,
+        "checked": 405,
+        "violations": 34,
+        "calls": 230
+      },
+      "monotone_probe": {
+        "witness_units": 15,
+        "breakers": 22,
+        "calls": 69,
+        "examples": [
+          "day_name = _localized_day('%A')",
+          "day_abbr = _localized_day('%a')",
+          "month_name = _localized_month('%B')"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "calls": {
+      "ddmin": 9583,
+      "ddmin+store": 2962,
+      "hdd": 6452,
+      "hdd+store": 3053,
+      "probdd": 3332,
+      "probdd+store": 2846
+    },
+    "speedup_ddmin": 3.235,
+    "subjects": 14,
+    "certified_minimal": 4,
+    "proved_minimal": 2,
+    "monotone_broken": 12,
+    "undecided": 0,
+    "witness_agrees": 11,
+    "add_one_breakers": 109,
+    "add_one_broken_subjects": 13,
+    "monotone_subjects": 1,
+    "self_refuting": 9,
+    "counterexample_proven": 9,
+    "validation_checked": 10287,
+    "validation_violations": 335,
+    "validation_violation_rate": 0.0326,
+    "original_units": 3727,
+    "witness_units": 481
+  }
+}

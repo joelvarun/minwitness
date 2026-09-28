@@ -1,0 +1,66 @@
+colorsys         witness= 13 of 104   one statement breakers: 0
+fnmatch          witness= 36 of 123   one statement breakers: 4
+    adding  name = os.path.normcase(name)
+    makes the 37 statement program stop reproducing VTrue
+    adding  pat = os.path.normcase(pat)
+    makes the 37 statement program stop reproducing VTrue
+string           witness= 25 of 152   one statement breakers: 3
+    adding  ascii_letters = ascii_lowercase + ascii_uppercase
+    makes the 26 statement program stop reproducing V'x-y'
+    adding  hexdigits = digits + 'abcdef' + 'ABCDEF'
+    makes the 26 statement program stop reproducing V'x-y'
+textwrap         witness= 48 of 179   one statement breakers: 3
+    adding  indent = self.subsequent_indent
+    makes the 49 statement program stop reproducing V['the quick', 'brown fox', 'jumps']
+    adding  text = self._munge_whitespace(text)
+    makes the 49 statement program stop reproducing V['the quick', 'brown fox', 'jumps']
+getopt           witness= 20 of 109   one statement breakers: 1
+    adding  error = GetoptError # backward compatibility
+    makes the 21 statement program stop reproducing V([('-a', ''), ('-b', 'x')], [])
+shlex            witness= 69 of 271   one statement breakers: 13
+    adding  _find_unsafe = re.compile(r'[^\w@%+=:,./-]', re.ASCII).search
+    makes the 70 statement program stop reproducing V['one', 'two three', 'four']
+    adding  self.pushback = deque()
+    makes the 70 statement program stop reproducing V['one', 'two three', 'four']
+shlex-error      witness= 45 of 271   one statement breakers: 9
+    adding  _find_unsafe = re.compile(r'[^\w@%+=:,./-]', re.ASCII).search
+    makes the 46 statement program stop reproducing EValueError:No closing quotation
+    adding  self.pushback = deque()
+    makes the 46 statement program stop reproducing EValueError:No closing quotation
+csv              witness= 52 of 264   one statement breakers: 5
+    adding  register_dialect("excel", excel)
+    makes the 53 statement program stop reproducing V','
+    adding  class excel_tab(excel):
+    makes the 53 statement program stop reproducing V','
+base64           witness= 13 of 331   one statement breakers: 10
+    adding  b32encode.__doc__ = _B32_ENCODE_DOCSTRING.format(encoding='base32')
+    makes the 14 statement program stop reproducing Vb'VPa!sWoBn+'
+    adding  b32decode.__doc__ = _B32_DECODE_DOCSTRING.format(encoding='base32',
+    makes the 14 statement program stop reproducing Vb'VPa!sWoBn+'
+copy             witness= 30 of 175   one statement breakers: 18
+    adding  error = Error   # backward compatibility
+    makes the 31 statement program stop reproducing V{'a': [1, 2], 'b': (3, 4)}
+    adding  for t in (types.NoneType, int, float, bool, complex, str, tuple,
+    makes the 31 statement program stop reproducing V{'a': [1, 2], 'b': (3, 4)}
+posixpath        witness= 28 of 352   one statement breakers: 4
+    adding  splitext.__doc__ = genericpath._splitext.__doc__
+    makes the 29 statement program stop reproducing V'a/c/d'
+    adding  supports_unicode_filenames = (sys.platform == 'darwin')
+    makes the 29 statement program stop reproducing V'a/c/d'
+fractions        witness= 69 of 460   one statement breakers: 5
+    adding  _PyHASH_MODULUS = sys.hash_info.modulus
+    makes the 70 statement program stop reproducing V'Fraction(2, 3)'
+    adding  _PyHASH_INF = sys.hash_info.inf
+    makes the 70 statement program stop reproducing V'Fraction(2, 3)'
+fractions-error  witness= 18 of 460   one statement breakers: 12
+    adding  _PyHASH_MODULUS = sys.hash_info.modulus
+    makes the 19 statement program stop reproducing EZeroDivisionError:Fraction(1, 0)
+    adding  _PyHASH_INF = sys.hash_info.inf
+    makes the 19 statement program stop reproducing EZeroDivisionError:Fraction(1, 0)
+calendar         witness= 15 of 476   one statement breakers: 22
+    adding  day_name = _localized_day('%A')
+    makes the 16 statement program stop reproducing V(m_calendar.THURSDAY, 29)
+    adding  day_abbr = _localized_day('%a')
+    makes the 16 statement program stop reproducing V(m_calendar.THURSDAY, 29)
+
+one statement monotonicity counterexamples found: 109
