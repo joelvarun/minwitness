@@ -56,7 +56,7 @@ The diagram shows how one oracle call turns into either a clause or a known good
 
 The metric is **oracle calls needed to produce a verified 1-minimal witness**. An oracle call is not simulated: it compiles a reduced copy of a real standard library module, executes it, runs the probe, and compares the outcome to the unreduced module. The baseline is `ddmin`, the algorithm every reduction tool descends from. `minwitness` is the same `ddmin` search with the constraint store answering determined queries.
 
-Across 14 tasks built from 13 CPython 3.13.5 modules, `ddmin` needs **9,583** oracle calls and `minwitness` needs **2,962**, a **3.23x** reduction, and the two produce the same witness on 13 of the 14 tasks. The witnesses cut 3,727 statements down to 481, or 87.1 percent removed. The whole measurement is 281 seconds on one CPU.
+Across 14 tasks built from 12 CPython 3.13.5 modules (`shlex` and `fractions` each appear twice, once for a value probe and once for an exception probe), `ddmin` needs **9,583** oracle calls and `minwitness` needs **2,962**, a **3.23x** reduction, and the two produce the same witness on 13 of the 14 tasks. The witnesses cut 3,727 statements down to 481, or 87.1 percent removed. The whole measurement is 281 seconds on one CPU.
 
 | subject | statements | witness | ddmin | HDD | ProbDD | minwitness | vs ddmin | add-one counterexamples |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
